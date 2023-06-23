@@ -12,8 +12,10 @@ import {
 import { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import HomeScreen from "../screens/Home"
+import SettingsScreen from '../screens/Settings';
+import colors from '../constants/colors';
 
-const width = Dimensions.get('window').width;
+const width = Dimensions.get('window').width*0.95;
 const height = Dimensions.get('window').height;
 
 const MARGIN = 0;
@@ -129,11 +131,20 @@ const TabNavigator = () => (
         screenOptions={{
             headerShown: false,
         }}
-        tabBar={props => <MyTabBar style={{ width, height }} {...props} />}>
+        tabBar={props => <MyTabBar style={{ width, height }} {...props} />}
+        >
         <Tab.Screen
             name={'HomeTab'}
             component={HomeScreen}
             options={{
+                tabBarIcon: require('../../assets/icons/home.png')
+            }}
+        />
+        <Tab.Screen
+            name={'Setting'}
+            component={SettingsScreen}
+            options={{
+                tabBarIcon: require('../../assets/icons/settings.png')
             }}
         />
     </Tab.Navigator>
@@ -144,18 +155,20 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: -4 },
         shadowOpacity: 0.9,
         shadowRadius: 4,
-        elevation: 20,
         bottom: 0,
         width: TAB_BAR_WIDTH,
         height: Dimensions.get('window').height * 0.08,
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: "#000",
+        backgroundColor: colors.white,
         position: 'absolute',
+        borderRadius: 15,
+        alignSelf:'center',
+        marginBottom: 10,
     },
     tinyLogo: {
-        width: 25,
-        height: 25,
+        width: 30,
+        height: 30,
     },
     tinyLogoActive: {
         tintColor: "#000",
@@ -171,11 +184,11 @@ const styles = StyleSheet.create({
         position: 'absolute',
     },
     slidingTab: {
-        width: 5,
-        height: 5,
+        width: 2,
+        height: 2,
         borderRadius: 15,
         backgroundColor: "#000",
-        marginTop: Dimensions.get('window').height * 0.06,
+        marginTop: Dimensions.get('window').height * 0.065,
         position: 'absolute',
     },
 });

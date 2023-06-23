@@ -25,7 +25,6 @@ const DrawerNavigator = () => {
                     drawerStyle: { backgroundColor: "#000" },
                 }}
             />
-            );
         </Drawer.Navigator>
     );
 };

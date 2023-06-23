@@ -10,15 +10,10 @@ const StackNavigator = () => (
     <Stack.Navigator screenOptions={{
         headerShown: false,
       }}>
-        {routes_array.map((_, index) => {
-            return(
-                <Stack.Screen
-                    key={index}
-                    name={_.name}
-                    component={_.component}
-                />
-            )
-        })}
+        <Stack.Screen
+            name={'Home'}
+            component={DrawerNavigator}
+        />
     </Stack.Navigator>
 );
 

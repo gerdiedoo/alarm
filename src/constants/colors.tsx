@@ -1,0 +1,18 @@
+export default{
+    primary : "#fff",
+    secondary: '#003399',
+    tertiary : "#314140",
+    shade: "#e6e6e6",
+    inActive :"#a3a3a3",
+    black:"#000",
+    white:"#fff",
+    blue : "#003399",
+    gray: "#808080",
+    favorite: "#ff3333",
+    light_blue: "rgba(22,182,226,1)",
+    bayleaf : '#6BAE87',
+    foodTheme: '#F25050',
+    Button: '#f22340',
+    blueWeb: '#273A96',
+    dark_gray: '#1c1c1c',
+}
